@@ -1,7 +1,7 @@
 FROM prato/autopilot-ruby
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
-RUN groupadd -r redmine && useradd -r -g redmine redmine
+RUN addgroup -S redmine && adduser -S -g redmine redmine
 
 # grab gosu for easy step-down from root
 ENV GOSU_VERSION 1.7
